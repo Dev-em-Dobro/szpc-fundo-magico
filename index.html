@@ -1,108 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Fundo Mágico - Gerador de Backgrounds</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundo Mágico - Gerador de Backgrounds</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/css/reset.css">
-    <link rel="stylesheet" href="src/css/estilos.css">
-    <link rel="stylesheet" href="src/css/responsivo.css">
-</head>
+		<link rel="stylesheet" href="./src/css/reset.css" />
+		<link rel="stylesheet" href="./src/css/estilos.css" />
+		<link rel="stylesheet" href="./src/css/responsivo.css" />
+	</head>
 
-<body>
+	<body>
+		<header class="header">
+			<h1>Fundo Mágico</h1>
+			<p class="subtitle">Transforme suas ideias em backgrounds incríveis com o poder da IA. Descreva o que você imagina e veja a magia acontecer.</p>
+		</header>
 
-    <!-- Container principal -->
-    <div class="container">
-        <!-- Header -->
-        <div class="header">
-            <div class="header-content">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path
-                        d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
-                    </path>
-                </svg>
-                <h1>Fundo Mágico</h1>
-                
-            </div>
-            <p class="subtitle">
-                Transforme suas ideias em backgrounds incríveis com o poder da IA.
-                Descreva o que você imagina e veja a magia acontecer.
-            </p>
-        </div>
+		<!-- Container principal -->
+		<main class="container">
+			<!-- Card principal do gerador -->
+			<div class="card main-card">
+				<h2 class="card-header">Descreva o background que você deseja</h2>
 
-        <!-- Card principal do gerador -->
-        <div class="card main-card">
-            <div class="card-header">
-                <h2>Descreva o background que você deseja</h2>
-            </div>
+				<form class="form-group">
+					<textarea id="description" placeholder="Ex: Um gradiente azul suave que vai azul claro ao azul escuro." rows="5"></textarea>
 
-            <div class="form-group">
-                <form class="form">
-                    <textarea id="description"
-                        placeholder="Ex: Um gradiente azul suave que vai azul claro ao azul escuro."
-                        rows="5"></textarea>
+					<button id="generate-btn" class="btn-magic">
+						<span id="btn-text">Gerar Background Mágico</span>
+					</button>
+				</form>
+			</div>
 
+			<!-- Preview Section -->
+			<section id="preview-section" class="preview-card">
+				<h3>Preview do Background</h3>
+				<div id="preview-box" class="preview-box">Seu Background Mágico</div>
+			</section>
 
-                    <button id="generate-btn" class="btn-magic">
-                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path
-                                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z">
-                            </path>
-                        </svg>
-                        <span id="btn-text">Gerar Background Mágico</span>
-                    </button>
-                </form>
-            </div>
-        </div>
+			<!-- Code Output -->
+			<section id="code-output" class="code-grid">
+				<!-- HTML Code Card -->
+				<div class="card code-card">
+					<h3 class="code-title">Código HTML</h3>
+					<pre id="html-code" class="code-block"></pre>
+				</div>
 
-        <!-- Preview Section -->
-        <div id="preview-section" class="card preview-card" style="display: none;">
-            <h3>Preview do Background</h3>
-            <div id="preview-box" class="preview-box">
-                Seu Background Mágico
-            </div>
-        </div>
+				<!-- CSS Code Card -->
+				<div class="card code-card">
+					<h3 class="code-title">Código CSS</h3>
+					<pre id="css-code" class="code-block"></pre>
+				</div>
+			</section>
+		</main>
 
-        <!-- Code Output -->
-        <div id="code-output" class="code-grid">
-            <!-- HTML Code Card -->
-            <div class="card code-card">
-                <div class="code-header">
-                    <div class="code-title">
-
-                        <h3>Código HTML</h3>
-                    </div>
-
-                </div>
-                <div class="code-block">
-                    <pre id="html-code">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, ipsum doloremque rem omnis neque ut nihil quisquam iusto, enim facere adipisci quod earum error repellat architecto natus dolorem vero? Obcaecati.</pre>
-                </div>
-            </div>
-
-            <!-- CSS Code Card -->
-            <div class="card code-card">
-                <div class="code-header">
-                    <div class="code-title">
-                        <h3>Código CSS</h3>
-                    </div>
-                </div>
-                <div class="code-block">
-                    <pre id="css-code">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut cupiditate aliquam consequatur soluta maiores porro. Unde iure doloribus mollitia maiores natus quae vitae porro ab temporibus error. Itaque, excepturi eos.</pre>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Toast notification -->
-    <div id="toast" class="toast">
-        <span id="toast-message"></span>
-    </div>
-
-    <script src="./src/js/script.js"></script>
-</body>
-
+		<script src="./src/js/script.js"></script>
+	</body>
 </html>
