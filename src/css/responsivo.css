@@ -1,6 +1,10 @@
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .code-grid {
-        grid-template-columns: 1fr 1fr;
+        flex-direction: column;
+    }
+
+    .code-card {
+        width: 100%;
     }
 }
 
